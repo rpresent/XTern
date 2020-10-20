@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <title>FoodieX/</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/static/base/images/favicon.ico?v=97c6417ed01bdc0ae3ef32ae4894fd03">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./FoodieX__files/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="./FoodieX__files/jquery.typeahead.min.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="stylesheet" href="./FoodieX__files/style.min.css" type="text/css">
+    
+    <link rel="stylesheet" href="./FoodieX__files/custom.css" type="text/css">
+    <script src="./FoodieX__files/promise.min.js.download" type="text/javascript" charset="utf-8"></script>
+    <script src="./FoodieX__files/index.js.download" type="text/javascript"></script>
+    <script src="./FoodieX__files/index.js(1).download" type="text/javascript"></script>
+    <script src="./FoodieX__files/index.js(2).download" type="text/javascript"></script>
+    <script src="./FoodieX__files/require.js.download" type="text/javascript" charset="utf-8"></script>
+    <script>
+      require.config({
+          
+          urlArgs: "v=20201019213226",
+          
+          baseUrl: '/user/rpresent/static/',
+          paths: {
+            'auth/js/main': 'auth/js/main.min',
+            custom : '/user/rpresent/custom',
+            nbextensions : '/user/rpresent/nbextensions',
+            kernelspecs : '/user/rpresent/kernelspecs',
+            underscore : 'components/underscore/underscore-min',
+            backbone : 'components/backbone/backbone-min',
+            jquery: 'components/jquery/jquery.min',
+            bootstrap: 'components/bootstrap/js/bootstrap.min',
+            bootstraptour: 'components/bootstrap-tour/build/js/bootstrap-tour.min',
+            'jquery-ui': 'components/jquery-ui/ui/minified/jquery-ui.min',
+            moment: 'components/moment/moment',
+            codemirror: 'components/codemirror',
+            termjs: 'components/xterm.js/dist/xterm',
+            typeahead: 'components/jquery-typeahead/dist/jquery.typeahead.min',
+          },
+          map: { // for backward compatibility
+              "*": {
+                  "jqueryui": "jquery-ui",
+              }
+          },
+          shim: {
+            typeahead: {
+              deps: ["jquery"],
+              exports: "typeahead"
+            },
+            underscore: {
+              exports: '_'
+            },
+            backbone: {
+              deps: ["underscore", "jquery"],
+              exports: "Backbone"
+            },
+            bootstrap: {
+              deps: ["jquery"],
+              exports: "bootstrap"
+            },
+            bootstraptour: {
+              deps: ["bootstrap"],
+              exports: "Tour"
+            },
+            "jquery-ui": {
+              deps: ["jquery"],
+              exports: "$"
+            }
+          },
+          waitSeconds: 30,
+      });
+
+      require.config({
+          map: {
+              '*':{
+                'contents': 'services/contents',
+              }
+          }
+      });
+
+      // error-catching custom.js shim.
+      define("custom", function (require, exports, module) {
+          try {
+              var custom = require('custom/custom');
+              console.debug('loaded custom.js');
+              return custom;
+          } catch (e) {
+              console.error("error loading custom.js", e);
+              return {};
+          }
+      })
+    </script>
+
+    
+    
+
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="services/contents" src="./FoodieX__files/contents.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="custom/custom" src="./FoodieX__files/custom.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nbextensions/nbextensions_configurator/tree_tab/main" src="./FoodieX__files/main.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nbextensions/nb_conda/tree" src="./FoodieX__files/tree.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nbextensions/ipyparallel/main" src="./FoodieX__files/main.js(1).download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nbextensions/nbextensions_configurator/main" src="./FoodieX__files/main.js(2).download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nbextensions/nbextensions_configurator/render/render" src="./FoodieX__files/render.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nbextensions/nb_conda/models" src="./FoodieX__files/models.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nbextensions/nb_conda/views" src="./FoodieX__files/views.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nbextensions/nb_conda/urls" src="./FoodieX__files/urls.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nbextensions/ipyparallel/clusterlist" src="./FoodieX__files/clusterlist.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-ui" src="./FoodieX__files/jquery-ui.min.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="base/js/security" src="./FoodieX__files/security.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="notebook/js/mathjaxutils" src="./FoodieX__files/mathjaxutils.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/marked/lib/marked" src="./FoodieX__files/marked.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/addon/runmode/runmode" src="./FoodieX__files/runmode.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/mode/gfm/gfm" src="./FoodieX__files/gfm.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="notebook/js/codemirror-ipython" src="./FoodieX__files/codemirror-ipython.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="notebook/js/codemirror-ipythongfm" src="./FoodieX__files/codemirror-ipythongfm.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nbextensions/nb_conda/common" src="./FoodieX__files/common.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="notebook/js/quickhelp" src="./FoodieX__files/quickhelp.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nbextensions/nbextensions_configurator/kse_components" src="./FoodieX__files/kse_components.js.download"></script><link rel="stylesheet" type="text/css" href="./FoodieX__files/clusterlist.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/google-caja/html-css-sanitizer-minified" src="./FoodieX__files/html-css-sanitizer-minified.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/mode/markdown/markdown" src="./FoodieX__files/markdown.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/addon/mode/overlay" src="./FoodieX__files/overlay.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/mode/python/python" src="./FoodieX__files/python.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/addon/mode/multiplex" src="./FoodieX__files/multiplex.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/mode/stex/stex" src="./FoodieX__files/stex.js.download"></script><link rel="stylesheet" type="text/css" href="./FoodieX__files/conda.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nbextensions/nbextensions_configurator/quickhelp_shim" src="./FoodieX__files/quickhelp_shim.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/mode/xml/xml" src="./FoodieX__files/xml.js.download"></script><link rel="stylesheet" type="text/css" href="./FoodieX__files/main.css"><link type="text/css" rel="stylesheet" href="./FoodieX__files/rendermd.css"></head>
+
+<body class="" data-base-url="/user/rpresent/" data-notebook-path="FoodieX" data-terminals-available="True" data-server-root="/home/rpresent" dir="ltr" data-new-gr-c-s-check-loaded="14.977.0" style="">
+
+<noscript>
+    <div id='noscript'>
+      Jupyter Notebook requires JavaScript.<br>
+      Please enable it to proceed.
+  </div>
+</noscript>
+
+<div id="header" style="display: block;">
+  <div id="header-container" class="container">
+  <div id="ipython_notebook" class="nav navbar-brand pull-left"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree" title="dashboard">
+<img src="./FoodieX__files/logo" alt="Jupyter Notebook">
+</a></div>
+
+  
+
+  
+  
+
+    <span id="login_widget">
+      
+        <button id="logout" class="btn btn-sm navbar-btn">Logout</button>
+      
+    </span>
+
+  
+
+  
+
+<a href="https://notebook.scholar.rcac.purdue.edu/hub/home" class="btn btn-default btn-sm navbar-btn pull-right" style="margin-right: 4px; margin-left: 2px;">
+Control Panel</a>
+
+
+  
+  
+  </div>
+  <div class="header-bar"></div>
+
+  
+  
+</div>
+
+<div id="site" style="height: 742px; display: block;">
+
+
+  <div id="ipython-main-app" class="container">
+    <div id="tab_content" class="tabbable">
+      <ul id="tabs" class="nav nav-tabs">
+        <li class="active"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#notebooks" data-toggle="tab">Files</a></li>
+        <li><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#running" data-toggle="tab">Running</a></li>
+        <li><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#clusters" data-toggle="tab" class="clusters_tab_link" style="display: none;">Clusters</a></li>
+      <li><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#ipyclusters" data-toggle="tab">IPython Clusters</a></li><li><a id="conda_tab" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#conda" data-toggle="tab">Conda</a></li><li><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#nbextensions_configurator" data-toggle="tab">Nbextensions</a></li></ul>
+      <div class="tab-content">
+        <div id="notebooks" class="tab-pane active">
+          <div id="notebook_toolbar" class="row list_toolbar">
+            <div class="col-sm-8 no-padding">
+              <div class="dynamic-instructions">
+                Select items to perform actions on them.
+              </div>
+              <div class="dynamic-buttons">
+                  <button title="Duplicate selected" class="duplicate-button btn btn-default btn-xs" style="display: none;">Duplicate</button>
+                  <button title="Rename selected" class="rename-button btn btn-default btn-xs" style="display: none;">Rename</button>
+                  <button title="Move selected" class="move-button btn btn-default btn-xs" style="display: none;">Move</button>
+                  <button title="Download selected" class="download-button btn btn-default btn-xs" style="display: none;">Download</button>
+                  <button title="Shutdown selected notebook(s)" class="shutdown-button btn btn-default btn-xs btn-warning" style="display: none;">Shutdown</button>
+                  <button title="View selected" class="view-button btn btn-default btn-xs" style="display: none;">View</button>
+                  <button title="Edit selected" class="edit-button btn btn-default btn-xs" style="display: none;">Edit</button>
+                  <button title="Delete selected" class="delete-button btn btn-default btn-xs btn-danger" style="display: none;"><i class="fa fa-trash"></i></button>
+              </div>
+            </div>
+            <div class="col-sm-4 no-padding tree-buttons">
+              <div class="pull-right">
+                <form id="alternate_upload" class="alternate_upload">
+                  <span id="notebook_list_info" class="toolbar_info">
+                  <span class="btn btn-xs btn-default btn-upload">
+                  <input title="Click to browse for a file to upload." type="file" name="datafile" class="fileinput" multiple="multiple">
+                  Upload
+                  </span>
+                  </span>
+                </form>
+                <div id="new-buttons" class="btn-group">
+                  <button class="dropdown-toggle btn btn-default btn-xs" data-toggle="dropdown" aria-expanded="false">
+                  <span>New</span>
+                  <span class="caret"></span>
+                  </button>
+                  <ul id="new-menu" class="dropdown-menu">
+                    <li role="presentation" class="dropdown-header" id="notebook-kernels">Notebook:</li><li id="kernel-bash"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#" title="Create a new notebook with Bash">Bash</a></li><li id="kernel-python3"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#" title="Create a new notebook with Python [default]">Python [default]</a></li><li id="kernel-ir"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#" title="Create a new notebook with R">R</a></li><li id="kernel-f2020-s2021"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#" title="Create a new notebook with f2020-s2021">f2020-s2021</a></li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation" class="dropdown-header">Other:</li>
+                    <li role="presentation" id="new-file">
+                      <a role="menuitem" tabindex="-1" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#">Text File</a>
+                    </li>
+                    <li role="presentation" id="new-folder">
+                      <a role="menuitem" tabindex="-1" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#">Folder</a>
+                    </li>
+                    
+                    <li role="presentation" id="new-terminal">
+                      <a role="menuitem" tabindex="-1" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#">Terminal</a>
+                    </li>
+                    
+                  </ul>
+                </div>
+                <div class="btn-group">
+                    <button id="refresh_notebook_list" title="Refresh notebook list" class="btn btn-default btn-xs"><i class="fa fa-refresh"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="notebook_list" class="list_container">
+            <div id="notebook_list_header" class="row list_header">
+              <div class="btn-group dropdown" id="tree-selector">
+                <button title="Select All / None" type="button" class="btn btn-default btn-xs" id="button-select-all">
+                  <input type="checkbox" class="pull-left tree-selector" id="select-all"><span id="counter-select-all">&nbsp;</span>
+                </button>
+                <button title="Select..." class="btn btn-default btn-xs dropdown-toggle" type="button" id="tree-selector-btn" data-toggle="dropdown" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul id="selector-menu" class="dropdown-menu" role="menu" aria-labelledby="tree-selector-btn">
+                  <li role="presentation"><a id="select-folders" role="menuitem" tabindex="-1" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#" title="Select All Folders"><i class="menu_icon folder_icon icon-fixed-width"></i> Folders</a></li>
+                  <li role="presentation"><a id="select-notebooks" role="menuitem" tabindex="-1" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#" title="Select All Notebooks"><i class="menu_icon notebook_icon icon-fixed-width"></i> All Notebooks</a></li>
+                  <li role="presentation"><a id="select-running-notebooks" role="menuitem" tabindex="-1" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#" title="Select Running Notebooks"><i class="menu_icon running_notebook_icon icon-fixed-width"></i> Running</a></li>
+                  <li role="presentation"><a id="select-files" role="menuitem" tabindex="-1" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#" title="Select All Files"><i class="menu_icon file_icon icon-fixed-width"></i> Files</a></li>
+                </ul>
+              </div>
+              <div id="project_name">
+                <ul class="breadcrumb">
+                  <li><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree"><i class="fa fa-folder"></i></a></li>
+                
+                  <li><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX">FoodieX</a></li>
+                
+                </ul>
+              </div>
+              <div id="last_modified" class="pull-right sort_button">
+                  <span class="btn btn-xs btn-default sort-action" id="last-modified">
+                      Last Modified
+                      <i class="fa fa-arrow-up"></i>
+                  </span>
+              </div>
+              <div id="sort_name" class="pull-right sort_button">
+                  <span class="btn btn-xs btn-default sort-action" id="sort-name">
+                      Name
+                      <i class="fa fa-arrow-up"></i>
+                  </span>
+              </div>
+            </div><div class="list_item row"><div class="col-md-12"><input type="checkbox" title="Click here to rename, delete, etc." style="visibility: hidden;"><i class="item_icon folder_icon icon-fixed-width"></i><a class="item_link" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree"><span class="item_name">..</span></a><span class="item_modified pull-right" title="2020-10-20 03:30">seconds ago</span><div class="item_buttons pull-right"><div class="running-indicator" style="visibility: hidden;">Running</div></div></div></div><div class="list_item row"><div class="col-md-12"><input type="checkbox" title="Click here to rename, delete, etc."><i class="item_icon running_notebook_icon icon-fixed-width"></i><a class="item_link" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/notebooks/FoodieX/FoodieX%20Data%20Set.ipynb" target="_blank"><span class="item_name">FoodieX Data Set.ipynb</span></a><span class="item_modified pull-right" title="2020-10-20 03:17">13 minutes ago</span><div class="item_buttons pull-right"><div class="running-indicator" style="">Running</div></div></div></div><div class="list_item row"><div class="col-md-12"><input type="checkbox" title="Click here to rename, delete, etc."><i class="item_icon file_icon icon-fixed-width"></i><a class="item_link" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/view/FoodieX/2020-XTern-DS.csv" target="_blank"><span class="item_name">2020-XTern-DS.csv</span></a><span class="item_modified pull-right" title="2020-10-19 21:38">6 hours ago</span><div class="item_buttons pull-right"><div class="running-indicator" style="visibility: hidden;">Running</div></div></div></div>
+          </div>
+        </div>
+        <div id="running" class="tab-pane">
+          <div id="running_toolbar" class="row list_toolbar">
+            <div class="col-sm-8 no-padding">
+              <span id="running_list_info" class="toolbar_info">Currently running Jupyter processes</span>
+            </div>
+            <div class="col-sm-4 no-padding tree-buttons">
+              <span id="running_buttons" class="pull-right toolbar_buttons">
+              <button id="refresh_running_list" title="Refresh running list" class="btn btn-default btn-xs"><i class="fa fa-refresh"></i></button>
+              </span>
+            </div>
+          </div>
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a data-toggle="collapse" data-target="#collapseOne" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#">
+                  Terminals
+                <i class="fa fa-caret-down"></i></a>
+              </div>
+              <div id="collapseOne" class=" collapse in">
+                <div class="panel-body">
+                  <div id="terminal_list" class="list_container">
+                    <div id="terminal_list_header" class="row list_placeholder">
+                    
+                      <div> There are no terminals running. </div>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a data-toggle="collapse" data-target="#collapseTwo" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#">
+                  Notebooks
+                <i class="fa fa-caret-down"></i></a>
+              </div>
+              <div id="collapseTwo" class=" collapse in">
+                <div class="panel-body">
+                  <div id="running_list" class="list_container">
+                    <div id="running_list_placeholder" class="row list_placeholder" style="display: none;">
+                      <div> There are no notebooks running. </div>
+                    </div>
+                  <div class="list_item row"><div class="col-md-12"><i class="item_icon running_notebook_icon icon-fixed-width"></i><a class="item_link" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/notebooks/FoodieX/FoodieX%20Data%20Set.ipynb" target="_blank"><span class="item_name">FoodieX/FoodieX Data Set.ipynb</span></a><span class="item_modified pull-right" title="2020-10-20 03:30">seconds ago</span><div class="item_buttons pull-right"><div class="kernel-name">Python [default]</div><button class="btn btn-warning btn-xs">Shutdown</button></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="clusters" class="tab-pane">
+          Clusters tab is now provided by IPython parallel.
+          See <a href="https://github.com/ipython/ipyparallel">IPython parallel</a> for installation details.
+        </div>
+      <div id="ipyclusters" class="tab-pane">
+  <div id="cluster_toolbar" class="row list_toolbar">
+    <div class="col-xs-8 no-padding">
+      <span id="cluster_list_info" class="toolbar_info">IPython parallel computing clusters</span>
+    </div>
+    <div class="col-xs-4 no-padding tree-buttons">
+      <span id="cluster_buttons" class="pull-right toolbar_buttons">
+      <button id="refresh_cluster_list" title="Refresh cluster list" class="btn btn-default btn-xs"><i class="fa fa-refresh"></i></button>
+      </span>
+    </div>
+  </div>
+  <div id="cluster_list" class="list_container">
+    <div id="cluster_list_header" class="row list_header">
+      <div class="profile_col col-xs-4">profile</div>
+      <div class="status_col col-xs-3">status</div>
+      <div class="engines_col col-xs-3" title="Enter the number of engines to start or empty for default"># of engines</div>
+      <div class="action_col col-xs-2">action</div>
+    </div>
+  <div class="list_item row"><div class="profile_col col-xs-4">default</div><div class="status_col col-xs-3">stopped</div><div class="engine_col col-xs-3"><input type="number" min="1" size="3" class="engine_num_input form-control"></div><div class="action_col col-xs-2"><span class="item_buttons btn-group"><button class="btn btn-default btn-xs">Start</button></span></div></div></div>
+</div><div id="conda" class="tab-pane">
+  <div id="environments">
+    <div id="env_toolbar" class="list_toolbar row">
+      <div class="col-xs-10 no-padding">
+        <span id="env_list_info" class="toolbar_info">Conda environments</span>
+      </div>
+      <div class="col-xs-2 no-padding tree-buttons">
+        <span id="env_buttons" class="toolbar_buttons pull-right">
+        <button id="new_env" title="Create new environment" class="btn btn-default btn-xs"><i class="fa fa-plus"></i></button>
+        <button id="refresh_env_list" title="Refresh environment list" class="btn btn-default btn-xs"><i class="fa fa-refresh"></i></button>
+        </span>
+      </div>
+    </div>
+    <div id="env_list" class="list_container">
+      <div id="env_list_header" class="list_header row"><div class="col-xs-1">Action</div><div class="col-xs-3">Name</div><div class="col-xs-1">Default?</div><div class="col-xs-7">Directory</div></div>
+      <div id="env_list_body" class="list_body scrollable">
+      </div>
+    </div>
+  </div>
+
+  <div id="available_packages" class="half_width" style="float: left">
+    <div id="avail_toolbar" class="list_toolbar row">
+      <div class="col-xs-6 no-padding">
+        <span id="avail_list_info" class="toolbar_info">Available packages</span>
+      </div>
+      <div class="col-xs-5 no-padding tree-buttons">
+        <span id="avail_buttons" class="toolbar_buttons pull-right">
+        <input id="searchbox" title="Search" placeholder="Search..." class="form-control small-input">
+        </span>
+      </div>
+      <div class="col-xs-1 no-padding tree-buttons">
+        <span id="avail_buttons" class="toolbar_buttons pull-right">
+        <button id="install" title="Install selected packages" class="btn btn-default btn-xs"><i class="fa fa-arrow-right"></i></button>
+        </span>
+      </div>
+    </div>
+    <div id="avail_list" class="list_container">
+      <div id="avail_list_header" class="list_header row"><div class="col-xs-5">Name</div><div class="col-xs-2">Version</div><div class="col-xs-5">Channel</div></div>
+      <div id="avail_list_body" class="list_body scrollable">
+      </div>
+    </div>
+  </div>
+
+  <div id="installed_packages" class="half_width" style="float: right">
+    <div id="pkg_toolbar" class="list_toolbar row">
+      <div class="col-xs-8 no-padding">
+        <span id="pkg_list_info" class="toolbar_info">Installed Conda packages</span>
+      </div>
+      <div class="col-xs-4 no-padding tree-buttons">
+        <span id="pkg_buttons" class="toolbar_buttons pull-right">
+        <button id="refresh_pkg_list" title="Refresh package list" class="btn btn-default btn-xs"><i class="fa fa-refresh"></i></button>
+        <button id="check_update" title="Check for Updates" class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+        <button id="update_pkgs" title="Update selected packages" class="btn btn-default btn-xs"><i class="fa fa-cloud-download"></i></button>
+        <button id="remove_pkgs" title="Remove selected packages" class="btn btn-default btn-xs"><i class="fa fa-trash-o"></i></button>
+        </span>
+      </div>
+    </div>
+    <div id="pkg_list" class="list_container">
+      <div id="pkg_list_header" class="list_header row"><div class="col-xs-5">Name</div><div class="col-xs-2">Version</div><div class="col-xs-2">Build</div><div class="col-xs-3">Available</div></div>
+      <div id="pkg_list_body" class="list_body scrollable">
+      </div>
+    </div>
+  </div>
+</div><div id="nbextensions_configurator" class="tab-pane"><div id="nbextensions-configurator-container" class="nbextensions-configurator-container container"><div class="nbext-buttons tree-buttons no-padding pull-right"><span class="btn-group"><button title="Refresh list of nbextensions" class="nbext-button-refreshlist btn btn-default btn-xs"><i class="fa fa-refresh"></i></button></span></div><div class="row container-fluid nbext-selector"><h3>Configurable nbextensions</h3><div class="nbext-showhide-incompat" style="display: block;"><input type="checkbox" id="nbext_hide_incompat"> disable configuration for nbextensions without explicit compatibility (they may break your notebook environment, but can be useful to show for nbextension development)</div><div id="nbext-filter-grp" class="nbext-filter-grp input-group"><span id="nbext-filter-label" class="nbext-filter-label input-group-addon"></span><div class="nbext-filter-input-wrap form-control" aria-describedby="nbext-filter-label"><div class="nbext-filter-input-subwrap"><input placeholder="by description, section, or tags" class="ui-autocomplete-input" autocomplete="off"><span class="fa fa-remove" title="clear filter"></span></div></div></div><nav class="row"><ul class="nav nav-pills"><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>(some) LaTeX environments for Jupyter</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>2to3 Converter</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 nbext-incompatible disabled" title="possibly incompatible"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>AddBefore</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Autopep8</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>AutoSaveTime</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 nbext-incompatible disabled" title="possibly incompatible"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Autoscroll</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Cell Filter</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Code Font Size</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Code prettify</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Codefolding</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Codefolding in Editor</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 nbext-incompatible disabled" title="possibly incompatible"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>CodeMirror mode extensions</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Collapsible Headings</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Comment/Uncomment Hotkey</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle nbext-enabled"></i>contrib_nbextensions_help_item</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>datestamper</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Equation Auto Numbering</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>ExecuteTime</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Execution Dependencies</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Exercise</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Exercise2</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Export Embedded HTML</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Freeze</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Gist-it</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Help panel</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Hide Header</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Hide input</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Hide input all</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Highlight selected word</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>highlighter</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Hinterland</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Initialization cells</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 nbext-incompatible disabled" title="possibly incompatible"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#" class="text-warning bg-warning"><i class="fa fa-fw nbext-enable-toggle nbext-enabled"></i>ipyparallel/main</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>isort formatter</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 nbext-incompatible disabled" title="possibly incompatible"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#" class="text-warning bg-warning"><i class="fa fa-fw nbext-enable-toggle nbext-enabled"></i>jupyter-js-widgets/extension</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Keyboard shortcut editor</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 nbext-incompatible disabled" title="possibly incompatible"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Launch QTConsole</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Limit Output</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Live Markdown Preview</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Load TeX macros</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Move selected cells</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Navigation-Hotkeys</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 nbext-incompatible disabled" title="possibly incompatible"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#" class="text-warning bg-warning"><i class="fa fa-fw nbext-enable-toggle nbext-enabled"></i>nb_conda/main</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 nbext-incompatible disabled" title="possibly incompatible"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#" class="text-warning bg-warning"><i class="fa fa-fw nbext-enable-toggle nbext-enabled"></i>nb_conda/tree</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle nbext-enabled"></i>Nbextensions dashboard tab</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle nbext-enabled"></i>Nbextensions edit menu item</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>nbTranslate</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Notify</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Printview</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Python Markdown</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Rubberband</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Ruler</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Runtools</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Scratchpad</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>ScrollDown</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Select CodeMirror Keymap</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>SKILL Syntax</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 nbext-incompatible disabled" title="possibly incompatible"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Skip-Traceback</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Snippets</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Snippets Menu</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>spellchecker</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Split Cells Notebook</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Table of Contents (2)</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>table_beautifier</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Toggle all line numbers</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Tree Filter</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>Variable Inspector</a></li><li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 active"><a href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#"><i class="fa fa-fw nbext-enable-toggle"></i>zenmode</a></li></ul></nav></div><div class="row nbext-ext-row" style=""><h3 class="col-xs-12">zenmode</h3><div class="col-xs-12"><div class="nbext-desc"><p>A little extension to give Zenmode functionality to the IPython notebook</p></div><div>section: notebook</div><div>require path: <span class="rendered_html"><code>zenmode/main</code></span></div><div class="nbext-compat-div">compatibility: <span>4.x, <span class="bg-success text-success">5.x</span></span></div><div class="btn-group nbext-enable-btns"><button type="button" class="btn btn-primary">Enable</button><button type="button" class="btn btn-default disabled" disabled="">Disable</button></div></div><div class="panel panel-default nbext-params col-xs-12"><div class="panel-heading"><i class="fa fa-fw fa-caret-down"></i>Parameters<a class="pull-right" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#" title="reset parameters to defaults"><i class="fa fa-refresh"></i> reset</a></div><div class="list-group"><div class="form-group list-group-item"><input type="checkbox" id="input_zenmode_set_zenmode_on_load"> <label for="input_zenmode_set_zenmode_on_load">Set zenmode on when a notebook opens</label></div><div class="form-group list-group-item"><input type="checkbox" id="input_zenmode_use_builtin_backgrounds"> <label for="input_zenmode_use_builtin_backgrounds">Use builtin backgrounds in addition to any specified by URL</label></div><div class="form-group list-group-item"><input type="checkbox" id="input_zenmode_hide_header"> <label for="input_zenmode_hide_header">Hide the header in zenmode</label></div><div class="form-group list-group-item"><input type="checkbox" id="input_zenmode_hide_menubar"> <label for="input_zenmode_hide_menubar">Hide the menubar in zenmode</label></div><div class="form-group list-group-item"><label for="input_zenmode_backgrounds">Urls to use as backgrounds. Any beginning with # are ignored.</label><div class="nbext-list-wrap" id="input_zenmode_backgrounds"><ul class="list-unstyled ui-sortable"></ul><div class="input-group"><a class="btn btn-default input-group-btn"><i class="fa fa-plus"></i> new item</a></div></div></div></div></div></div><div class="row nbext-readme panel panel-default" style=""><div class="panel-heading"><i class="fa fa-fw fa-caret-down"></i><span>/user/rpresent/nbextensions/zenmode/README.md</span></div><div class="panel-body"><div class="rendered_html"><h1 id="Zenmode">Zenmode<a class="anchor-link" href="https://notebook.scholar.rcac.purdue.edu/user/rpresent/tree/FoodieX#Zenmode">¶</a></h1>
+<p>A little extension to give Zenmode functionality to the IPython notebook</p>
+</div></div></div></div></div></div><!-- class:tab-content -->
+    </div><!-- id:tab_content -->
+  </div><!-- ipython-main-app  -->
+
+
+</div>
+
+
+
+
+
+    
+
+
+
+<script src="./FoodieX__files/main.min.js.download" type="text/javascript" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+  function _remove_token_from_url() {
+    if (window.location.search.length <= 1) {
+      return;
+    }
+    var search_parameters = window.location.search.slice(1).split('&');
+    for (var i = 0; i < search_parameters.length; i++) {
+      if (search_parameters[i].split('=')[0] === 'token') {
+        // remote token from search parameters
+        search_parameters.splice(i, 1);
+        var new_search = '';
+        if (search_parameters.length) {
+          new_search = '?' + search_parameters.join('&');
+        }
+        var new_url = window.location.origin + 
+                      window.location.pathname + 
+                      new_search + 
+                      window.location.hash;
+        window.history.replaceState({}, "", new_url);
+        return;
+      }
+    }
+  }
+  _remove_token_from_url();
+</script>
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: none;"></ul></body></html>
